@@ -1,8 +1,44 @@
-body{
+body {
     margin: 0;
     padding: 0;
 }
 
-.gameAreaCenter{
-    
+table {
+    border-collapse: collapse;
+}
+
+table tr td {
+    padding: 80px;
+    background-color: aquamarine;
+}
+
+table tr td:hover {
+    padding: 80px;
+    background-color: rgb(12, 167, 115);
+    cursor: pointer;
+}
+
+#gameArea {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.borderTopNone{
+    border: solid black 2px;
+    border-top: none;
+}
+.borderBottomNone{
+    border: solid black 2px;
+    border-bottom: none;
+}
+.borderLeftNone{
+    border: solid black 2px;
+    border-left: none;
+}
+.borderRightNone{
+    border: solid black 2px;
+    border-right: none;
 }
