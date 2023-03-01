@@ -42,3 +42,9 @@ table tr td:hover {
     border: solid black 2px;
     border-right: none;
 }
+
+.picClass{
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
