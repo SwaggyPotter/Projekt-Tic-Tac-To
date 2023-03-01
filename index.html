@@ -10,6 +10,21 @@
 </head>
 
 <body>
+    <div id="startContainer">
+        <div id="nameColum">
+            <input class="inputStyle" id="nameInput1" type="text" placeholder="Player 1">
+            <input class="inputStyle" id="nameInput2" type="text" placeholder="Player 2">
+        </div>
+        <p id="startButton">Start Game</p>
+    </div>
+
+    <div id="playerContainer">
+        <div class="flexBetween">
+            <p id="player1Name">Player 1</p>
+            <p id="player2Name">Player 2</p>
+        </div>
+    </div>
+
     <div class="gameAreaCenter">
         <div id="gameArea">
             <table>
@@ -34,6 +49,13 @@
             </table>
         </div>
     </div>
+
+    <div id="gameOverScreen">
+        <h1 id="winnerName">The Winner is:<span id="playerWinnerName">Player 1</span></h1>
+        <img src="textures/gameOver.gif">
+        <h3 id="restartButton">Restart Game</h3>
+    </div>
+
 </body>
 <script src="script.js"></script>
 
