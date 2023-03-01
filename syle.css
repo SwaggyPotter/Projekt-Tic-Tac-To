@@ -26,10 +26,19 @@ table tr td:hover {
     left: 0;
     top: 0;
     background-color: bisque;
-    display: none; /*Standart = flex*/
+    display: flex; /*Standart = flex*/
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+#player1Name{
+    background-color: rgb(0, 255, 213);
+    padding: 20px;
+}
+#player2Name{
+    background-color: gray;
+    padding: 20px;
 }
 
 #nameColum {

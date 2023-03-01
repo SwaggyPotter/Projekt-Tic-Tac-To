@@ -31,6 +31,15 @@ function checkForWinCircle() {
     if (game[0] == 0 && game[1] == 0 && game[2] == 0) {
         endGameCircle();
     }
+    else if (game[0] == 0 && game[3] == 0 && game[6] == 0) {
+        endGameCircle();
+    }
+    else if (game[1] == 0 && game[4] == 0 && game[7] == 0) {
+        endGameCircle();
+    }
+    else if (game[2] == 0 && game[5] == 0 && game[8] == 0) {
+        endGameCircle();
+    }
     else if (game[3] == 0 && game[4] == 0 && game[5] == 0) {
         endGameCircle();
     }
@@ -51,6 +60,15 @@ function checkForWinCross(){
         endGameCross();
     }
     else if (game[3] == 1 && game[4] == 1 && game[5] == 1) {
+        endGameCross();
+    }
+    else if (game[0] == 1 && game[3] == 1 && game[6] == 1) {
+        endGameCross();
+    }
+    else if (game[1] == 1 && game[4] == 1 && game[7] == 1) {
+        endGameCross();
+    }
+    else if (game[2] == 1 && game[5] == 1 && game[8] == 1) {
         endGameCross();
     }
     else if (game[6] == 1 && game[7] == 1 && game[8] == 1) {
@@ -78,7 +96,15 @@ function endGameCross(){
 
 
 function showCurrentPlayer(){
-    
+    if(currentPlayer == 0){
+        document.getElementById('player1Name').style.backgroundColor = 'rgb(0, 255, 213)';
+        document.getElementById('player2Name').style.backgroundColor = 'gray';
+    }
+    else if(currentPlayer == 1){
+        document.getElementById('player2Name').style.backgroundColor = 'rgb(0, 255, 213)';
+        document.getElementById('player1Name').style.backgroundColor = 'gray';
+    }
+
 }
 
 
