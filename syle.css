@@ -72,7 +72,7 @@ table tr td:hover {
 #gameArea {
     width: 100%;
     min-height: 100vh;
-    display: flex;
+    display: flex; /*Standart = flex*/
     justify-content: center;
     align-items: center;
     background-image: url("textures/cyber\ \(1\).gif");
@@ -120,7 +120,7 @@ table tr td:hover {
 
 #playerContainer {
     width: 100%;
-    display: flex;
+    display: flex; /*Standart = flex*/
     justify-content: center;
     align-items: center;
     background-color: rgba(45, 53, 126, 0.993);
@@ -141,11 +141,15 @@ table tr td:hover {
     top: 0;
     height: 100%;
     width: 100%;
-    display: none;
+    display: none; /*Standart = none*/
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: black;
+    background-image: url("textures/endscreen.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 2s;
 }
 
 #winnerName {

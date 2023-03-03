@@ -92,8 +92,8 @@ function endGameCircle() {
     setTimeout(() => {
         document.getElementById('gameOverScreen').style.display = 'flex';
         document.getElementById('playerWinnerName').innerText = nameInputOne.value;
+        document.getElementById('audioSound').src = 'sounds/end-music.mp3';
     }, 1000)
-
 }
 
 
@@ -101,9 +101,8 @@ function endGameCross() {
     setTimeout(() => {
         document.getElementById('gameOverScreen').style.display = 'flex';
         document.getElementById('playerWinnerName').innerText = nameInputTwo.value;
+        document.getElementById('audioSound').src = 'sounds/end-music.mp3';
     }, 1000)
-
-
 }
 
 
@@ -120,14 +119,23 @@ function showCurrentPlayer() {
 }
 
 function restart() {
-    location.reload();
+    var audio = new Audio('sounds/buttonSound.mp3');
+    audio.play();
+    setTimeout(() => {
+        location.reload();
+    }, 1000)
+
 }
 
 
 startButton.addEventListener('click', () => {
-    document.getElementById('player1Name').innerText = nameInputOne.value;
-    document.getElementById('player2Name').innerText = nameInputTwo.value;
-    document.getElementById('startContainer').style.display = 'none';
-    document.getElementById('audioSound').src = 'sounds/soft-rain.mp3'
+    var audio = new Audio('sounds/buttonSound.mp3');
+    audio.play();
+    setTimeout(() => {
+        document.getElementById('player1Name').innerText = nameInputOne.value;
+        document.getElementById('player2Name').innerText = nameInputTwo.value;
+        document.getElementById('startContainer').style.display = 'none';
+        document.getElementById('audioSound').src = 'sounds/soft-rain.mp3'
+    }, 1000)
 })
 
