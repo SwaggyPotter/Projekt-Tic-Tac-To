@@ -5,6 +5,7 @@ let nameInputOne = document.getElementById('nameInput1')
 let nameInputTwo = document.getElementById('nameInput2')
 
 
+
 function add(c) {
     if (currentPlayer == 0) {
         if (game[c] === null) {
@@ -13,6 +14,8 @@ function add(c) {
             currentPlayer++
             checkForWinCircle()
             showCurrentPlayer();
+            let audio = new Audio('sounds/click.mp3');
+            audio.play();
         }
     }
     else if (currentPlayer == 1) {
@@ -22,6 +25,8 @@ function add(c) {
             currentPlayer--
             checkForWinCross();
             showCurrentPlayer()
+            let audio = new Audio('sounds/click.mp3');
+            audio.play();
         }
     }
 }
@@ -55,7 +60,7 @@ function checkForWinCircle() {
 }
 
 
-function checkForWinCross(){
+function checkForWinCross() {
     if (game[0] == 1 && game[1] == 1 && game[2] == 1) {
         endGameCross();
     }
@@ -83,33 +88,46 @@ function checkForWinCross(){
 }
 
 
-function endGameCircle(){
-    document.getElementById('gameOverScreen').style.display = 'flex';
-    document.getElementById('playerWinnerName').innerText = nameInputOne.value;
+function endGameCircle() {
+    setTimeout(() => {
+        document.getElementById('gameOverScreen').style.display = 'flex';
+        document.getElementById('playerWinnerName').innerText = nameInputOne.value;
+    }, 1000)
+
 }
 
 
-function endGameCross(){
-    document.getElementById('gameOverScreen').style.display = 'flex';
-    document.getElementById('playerWinnerName').innerText = nameInputTwo.value;
+function endGameCross() {
+    setTimeout(() => {
+        document.getElementById('gameOverScreen').style.display = 'flex';
+        document.getElementById('playerWinnerName').innerText = nameInputTwo.value;
+    }, 1000)
+
+
 }
 
 
-function showCurrentPlayer(){
-    if(currentPlayer == 0){
-        document.getElementById('player1Name').style.backgroundColor = 'rgb(0, 255, 213)';
+function showCurrentPlayer() {
+    if (currentPlayer == 0) {
+        document.getElementById('player1Name').style.backgroundColor = 'rgb(255, 0, 212)';
         document.getElementById('player2Name').style.backgroundColor = 'gray';
     }
-    else if(currentPlayer == 1){
-        document.getElementById('player2Name').style.backgroundColor = 'rgb(0, 255, 213)';
+    else if (currentPlayer == 1) {
+        document.getElementById('player2Name').style.backgroundColor = 'rgb(255, 0, 212)';
         document.getElementById('player1Name').style.backgroundColor = 'gray';
     }
 
 }
 
+function restart() {
+    location.reload();
+}
 
-startButton.addEventListener('click', ()=>{
+
+startButton.addEventListener('click', () => {
     document.getElementById('player1Name').innerText = nameInputOne.value;
     document.getElementById('player2Name').innerText = nameInputTwo.value;
     document.getElementById('startContainer').style.display = 'none';
+    document.getElementById('audioSound').src = 'sounds/soft-rain.mp3'
 })
+
