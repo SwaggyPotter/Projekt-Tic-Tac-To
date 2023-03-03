@@ -3,6 +3,8 @@ let game = [null, null, null, null, null, null, null, null, null]
 let startButton = document.getElementById('startButton')
 let nameInputOne = document.getElementById('nameInput1')
 let nameInputTwo = document.getElementById('nameInput2')
+let backgroundAudio = document.getElementById('audioSound')
+backgroundAudio.volume = 0.1
 
 
 
@@ -15,6 +17,7 @@ function add(c) {
             checkForWinCircle()
             showCurrentPlayer();
             let audio = new Audio('sounds/click.mp3');
+            audio.volume = 0.1
             audio.play();
         }
     }
@@ -26,6 +29,7 @@ function add(c) {
             checkForWinCross();
             showCurrentPlayer()
             let audio = new Audio('sounds/click.mp3');
+            audio.volume = 0.1
             audio.play();
         }
     }
@@ -120,6 +124,7 @@ function showCurrentPlayer() {
 
 function restart() {
     var audio = new Audio('sounds/buttonSound.mp3');
+    audio.volume = 0.1
     audio.play();
     setTimeout(() => {
         location.reload();
@@ -130,6 +135,7 @@ function restart() {
 
 startButton.addEventListener('click', () => {
     var audio = new Audio('sounds/buttonSound.mp3');
+    audio.volume = 0.1
     audio.play();
     setTimeout(() => {
         document.getElementById('player1Name').innerText = nameInputOne.value;

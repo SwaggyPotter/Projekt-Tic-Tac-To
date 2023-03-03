@@ -149,7 +149,7 @@ table tr td:hover {
     background-image: url("textures/endscreen.gif");
     background-repeat: no-repeat;
     background-size: cover;
-    transition: 2s;
+    background-position: center;
 }
 
 #winnerName {
@@ -164,6 +164,7 @@ table tr td:hover {
     background-color: green;
     padding: 20px;
     transition: 125ms;
+    border-radius: 20px;
 }
 
 #restartButton:hover {
@@ -172,6 +173,7 @@ table tr td:hover {
     padding: 20px;
     cursor: pointer;
     transition: 125ms;
+    border-radius: 25px;
 }
 
 #playerWinnerName {
