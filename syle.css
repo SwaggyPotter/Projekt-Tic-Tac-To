@@ -29,18 +29,20 @@ table tr td:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-color: rgb(113, 151, 221);
-    display: flex; /*Standart = flex*/
+    display: flex;
+    /*Standart = flex*/
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-#player1Name{
+#player1Name {
     background-color: rgb(255, 0, 212);
     padding: 20px;
     border-radius: 15px;
 }
-#player2Name{
+
+#player2Name {
     background-color: gray;
     padding: 20px;
     border-radius: 15px;
@@ -52,7 +54,7 @@ table tr td:hover {
     margin-bottom: 50px;
 }
 
-#startButton{
+#startButton {
     color: white;
     background-color: green;
     padding: 20px;
@@ -60,7 +62,7 @@ table tr td:hover {
     border-radius: 20px;
 }
 
-#startButton:hover{
+#startButton:hover {
     color: white;
     background-color: rgb(1, 197, 1);
     padding: 20px;
@@ -72,7 +74,8 @@ table tr td:hover {
 #gameArea {
     width: 100%;
     min-height: 100vh;
-    display: flex; /*Standart = flex*/
+    display: flex;
+    /*Standart = flex*/
     justify-content: center;
     align-items: center;
     background-image: url("textures/cyber\ \(1\).gif");
@@ -120,7 +123,8 @@ table tr td:hover {
 
 #playerContainer {
     width: 100%;
-    display: flex; /*Standart = flex*/
+    display: flex;
+    /*Standart = flex*/
     justify-content: center;
     align-items: center;
     background-color: rgba(45, 53, 126, 0.993);
@@ -141,7 +145,8 @@ table tr td:hover {
     top: 0;
     height: 100%;
     width: 100%;
-    display: none; /*Standart = none*/
+    display: none;
+    /*Standart = none*/
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -178,4 +183,68 @@ table tr td:hover {
 
 #playerWinnerName {
     margin-left: 5px;
+}
+
+.windowBlack {
+    z-index: 5;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0%;
+    animation: nextWindow 2s;
+}
+
+#windowBlackStart {
+    z-index: 5;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0%;
+    animation: nextWindowStart 2s;
+}
+
+.windowBlackEnd {
+    z-index: 5;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 0%;
+    animation: windowBlackEnd 2.2s;
+}
+
+@keyframes windowBlackEnd {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes nextWindowStart {
+    0% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
+}
+
+@keyframes nextWindow {
+    0% {
+        width: 0%;
+    }
+
+    50% {
+        width: 100%;
+    }
+
+    100% {
+        width: 0%;
+    }
 }

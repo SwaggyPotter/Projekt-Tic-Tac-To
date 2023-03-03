@@ -7,7 +7,6 @@ let backgroundAudio = document.getElementById('audioSound')
 backgroundAudio.volume = 0.1
 
 
-
 function add(c) {
     if (currentPlayer == 0) {
         if (game[c] === null) {
@@ -93,20 +92,28 @@ function checkForWinCross() {
 
 
 function endGameCircle() {
+    document.getElementById('windowBlack').classList.add('windowBlack')
     setTimeout(() => {
         document.getElementById('gameOverScreen').style.display = 'flex';
         document.getElementById('playerWinnerName').innerText = nameInputOne.value;
         document.getElementById('audioSound').src = 'sounds/end-music.mp3';
     }, 1000)
+    setTimeout(() => {
+        document.getElementById('windowBlack').classList.remove('windowBlack')
+    }, 2000)
 }
 
 
 function endGameCross() {
+    document.getElementById('windowBlack').classList.add('windowBlack')
     setTimeout(() => {
         document.getElementById('gameOverScreen').style.display = 'flex';
         document.getElementById('playerWinnerName').innerText = nameInputTwo.value;
         document.getElementById('audioSound').src = 'sounds/end-music.mp3';
     }, 1000)
+    setTimeout(() => {
+        document.getElementById('windowBlack').classList.remove('windowBlack')
+    }, 2000)
 }
 
 
@@ -122,14 +129,15 @@ function showCurrentPlayer() {
 
 }
 
+
 function restart() {
     var audio = new Audio('sounds/buttonSound.mp3');
     audio.volume = 0.1
     audio.play();
+    document.getElementById('windowBlackEnd').classList.add('windowBlackEnd')
     setTimeout(() => {
         location.reload();
-    }, 1000)
-
+    }, 2000)
 }
 
 
@@ -137,11 +145,14 @@ startButton.addEventListener('click', () => {
     var audio = new Audio('sounds/buttonSound.mp3');
     audio.volume = 0.1
     audio.play();
+    document.getElementById('windowBlack').classList.add('windowBlack')
     setTimeout(() => {
         document.getElementById('player1Name').innerText = nameInputOne.value;
         document.getElementById('player2Name').innerText = nameInputTwo.value;
         document.getElementById('startContainer').style.display = 'none';
         document.getElementById('audioSound').src = 'sounds/soft-rain.mp3'
     }, 1000)
+    setTimeout(() => {
+        document.getElementById('windowBlack').classList.remove('windowBlack')
+    }, 2000)
 })
-
