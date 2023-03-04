@@ -319,3 +319,29 @@ table tr td:hover {
         height: 400px;
     }
 }
+
+@media screen and (max-width:500px) {
+    table tr td {
+        padding: 60px;
+        background-color: rgba(153, 182, 245, 0.664);
+    }
+    
+    table tr td:hover {
+        padding: 60px;
+        background-color: rgba(12, 105, 167, 0.678);
+        cursor: pointer;
+    } 
+}
+
+@media screen and (max-width:400px) {
+    table tr td {
+        padding: 50px;
+        background-color: rgba(153, 182, 245, 0.664);
+    }
+    
+    table tr td:hover {
+        padding: 50px;
+        background-color: rgba(12, 105, 167, 0.678);
+        cursor: pointer;
+    } 
+}
