@@ -108,27 +108,31 @@ function checkForWinCross() {
 
 
 function endGameCircle() {
-    document.getElementById('windowBlack').classList.add('windowBlack')
     setTimeout(() => {
-        document.getElementById('gameOverScreen').style.display = 'flex';
-        document.getElementById('playerWinnerName').innerText = nameInputOne.value;
-        document.getElementById('audioSound').src = 'sounds/end-music.mp3';
-    }, 1000)
-    setTimeout(() => {
-        document.getElementById('windowBlack').classList.remove('windowBlack')
+        document.getElementById('windowBlack').classList.add('windowBlack')
+        setTimeout(() => {
+            document.getElementById('gameOverScreen').style.display = 'flex';
+            document.getElementById('playerWinnerName').innerText = nameInputOne.value;
+            document.getElementById('audioSound').src = 'sounds/end-music.mp3';
+        }, 1000)
+        setTimeout(() => {
+            document.getElementById('windowBlack').classList.remove('windowBlack')
+        }, 2000)
     }, 2000)
 }
 
 
 function endGameCross() {
-    document.getElementById('windowBlack').classList.add('windowBlack')
     setTimeout(() => {
-        document.getElementById('gameOverScreen').style.display = 'flex';
-        document.getElementById('playerWinnerName').innerText = nameInputTwo.value;
-        document.getElementById('audioSound').src = 'sounds/end-music.mp3';
-    }, 1000)
-    setTimeout(() => {
-        document.getElementById('windowBlack').classList.remove('windowBlack')
+        document.getElementById('windowBlack').classList.add('windowBlack')
+        setTimeout(() => {
+            document.getElementById('gameOverScreen').style.display = 'flex';
+            document.getElementById('playerWinnerName').innerText = nameInputTwo.value;
+            document.getElementById('audioSound').src = 'sounds/end-music.mp3';
+        }, 1000)
+        setTimeout(() => {
+            document.getElementById('windowBlack').classList.remove('windowBlack')
+        }, 2000)
     }, 2000)
 }
 
@@ -175,56 +179,80 @@ startButton.addEventListener('click', () => {
 
 // end game line animation add
 
-function lineAnimationMid(){
+function lineAnimationMid() {
     document.getElementById('hrMid').classList.add('MidAnimationClass')
     document.getElementById('hrMid').style.display = 'inline';
+    setTimeout(() => {
+        document.getElementById('hrMid').style.height = '400px'
+    }, 800)
 }
 
 
-function lineAnimationMid2(){
+function lineAnimationMid2() {
     document.getElementById('hrMid').classList.add('MidAnimationClass')
     document.getElementById('hrMid').style.display = 'inline';
     document.getElementById('hrMid').style.rotate = '90deg';
+    setTimeout(() => {
+        document.getElementById('hrMid').style.height = '400px'
+    }, 800)
 }
 
 
-function lineAnimationObliqueLineLeftRight(){
+function lineAnimationObliqueLineLeftRight() {
     document.getElementById('hrMid').classList.add('MidAnimationClass')
     document.getElementById('hrMid').style.rotate = '135deg';
     document.getElementById('hrMid').style.display = 'inline';
+    setTimeout(() => {
+        document.getElementById('hrMid').style.height = '400px'
+    }, 800)
 }
 
 
-function lineAnimationObliqueLineRightLeft(){
+function lineAnimationObliqueLineRightLeft() {
     document.getElementById('hrMid').classList.add('MidAnimationClass')
     document.getElementById('hrMid').style.rotate = '45deg';
     document.getElementById('hrMid').style.display = 'inline';
+    setTimeout(() => {
+        document.getElementById('hrMid').style.height = '400px'
+    }, 800)
 }
 
 
-function topLineAcrossAnimation(){
+function topLineAcrossAnimation() {
     document.getElementById('hrMid').classList.add('lineAcrossAnimationClass')
     document.getElementById('hrMid').style.display = 'inline';
     document.getElementById('hrMid').style.top = '-90px';
+    setTimeout(() => {
+        document.getElementById('hrMid').style.width = '400px'
+    }, 800)
 }
 
 
-function lastLineAcrossAnimation(){
+function lastLineAcrossAnimation() {
     document.getElementById('hrMid').classList.add('lineAcrossAnimationClass')
     document.getElementById('hrMid').style.display = 'inline';
     document.getElementById('hrMid').style.top = '230px';
+    setTimeout(() => {
+        document.getElementById('hrMid').style.width = '400px'
+    }, 800)
 }
 
 
-function upRightDownAnimation(){
+function upRightDownAnimation() {
     document.getElementById('hrMid').classList.add('uprightAnimation')
     document.getElementById('hrMid').style.display = 'inline';
     document.getElementById('hrMid').style.left = '-90px';
+    setTimeout(() => {
+        document.getElementById('hrMid').style.height = '400px'
+    }, 800)
 }
 
 
-function upRightDownAnimation2(){
+function upRightDownAnimation2() {
     document.getElementById('hrMid').classList.add('uprightAnimation')
     document.getElementById('hrMid').style.display = 'inline';
     document.getElementById('hrMid').style.left = '240px';
+    setTimeout(() => {
+        document.getElementById('hrMid').style.height = '400px'
+    }, 800)
 }
