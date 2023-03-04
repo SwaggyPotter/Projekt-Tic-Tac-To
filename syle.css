@@ -34,6 +34,7 @@ table tr td:hover {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    z-index: 4;
 }
 
 #player1Name {
@@ -203,6 +204,7 @@ table tr td:hover {
     bottom: 0;
     width: 0%;
     animation: nextWindowStart 2s;
+    /*nextWindowStart*/
 }
 
 .windowBlackEnd {
@@ -215,9 +217,16 @@ table tr td:hover {
     animation: windowBlackEnd 2.2s;
 }
 
+/*next window animations*/
+
+
 @keyframes windowBlackEnd {
     0% {
         width: 0%;
+    }
+
+    50% {
+        width: 100%;
     }
 
     100% {
@@ -228,6 +237,10 @@ table tr td:hover {
 @keyframes nextWindowStart {
     0% {
         width: 100%;
+    }
+
+    50% {
+        width: 0%;
     }
 
     100% {
@@ -246,5 +259,63 @@ table tr td:hover {
 
     100% {
         width: 0%;
+    }
+}
+
+/*line winning animation*/
+
+#field4 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#field4 hr {
+    position: absolute;
+    height: 0;
+    display: none;
+}
+
+.MidAnimationClass {
+    animation: heightAnimation 1s;
+}
+
+.lineAcrossAnimationClass {
+    animation: acrossAnimation 1s;
+}
+
+.uprightAnimation {
+    animation: uprightAnimation 1s;
+}
+
+@keyframes acrossAnimation {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 400px;
+    }
+
+}
+
+@keyframes heightAnimation {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 400px
+    }
+}
+
+@keyframes uprightAnimation {
+    0% {
+        height: 0px;
+    }
+
+    100% {
+        height: 400px;
     }
 }

@@ -38,27 +38,35 @@ function add(c) {
 function checkForWinCircle() {
     if (game[0] == 0 && game[1] == 0 && game[2] == 0) {
         endGameCircle();
+        topLineAcrossAnimation()
     }
     else if (game[0] == 0 && game[3] == 0 && game[6] == 0) {
         endGameCircle();
+        upRightDownAnimation();
     }
     else if (game[1] == 0 && game[4] == 0 && game[7] == 0) {
         endGameCircle();
+        lineAnimationMid();
     }
     else if (game[2] == 0 && game[5] == 0 && game[8] == 0) {
         endGameCircle();
+        upRightDownAnimation2();
     }
     else if (game[3] == 0 && game[4] == 0 && game[5] == 0) {
         endGameCircle();
+        lineAnimationMid2()
     }
     else if (game[6] == 0 && game[7] == 0 && game[8] == 0) {
         endGameCircle();
+        lastLineAcrossAnimation()
     }
     else if (game[0] == 0 && game[4] == 0 && game[8] == 0) {
         endGameCircle();
+        lineAnimationObliqueLineLeftRight()
     }
     else if (game[2] == 0 && game[4] == 0 && game[6] == 0) {
         endGameCircle();
+        lineAnimationObliqueLineRightLeft()
     }
 }
 
@@ -66,27 +74,35 @@ function checkForWinCircle() {
 function checkForWinCross() {
     if (game[0] == 1 && game[1] == 1 && game[2] == 1) {
         endGameCross();
+        topLineAcrossAnimation()
     }
     else if (game[3] == 1 && game[4] == 1 && game[5] == 1) {
         endGameCross();
+        lineAnimationMid2()
     }
     else if (game[0] == 1 && game[3] == 1 && game[6] == 1) {
         endGameCross();
+        upRightDownAnimation();
     }
     else if (game[1] == 1 && game[4] == 1 && game[7] == 1) {
         endGameCross();
+        lineAnimationMid();
     }
     else if (game[2] == 1 && game[5] == 1 && game[8] == 1) {
         endGameCross();
+        upRightDownAnimation2();
     }
     else if (game[6] == 1 && game[7] == 1 && game[8] == 1) {
         endGameCross();
+        lastLineAcrossAnimation()
     }
     else if (game[0] == 1 && game[4] == 1 && game[8] == 1) {
         endGameCross();
+        lineAnimationObliqueLineLeftRight()
     }
     else if (game[2] == 1 && game[4] == 1 && game[6] == 1) {
         endGameCross();
+        lineAnimationObliqueLineRightLeft()
     }
 }
 
@@ -156,3 +172,59 @@ startButton.addEventListener('click', () => {
         document.getElementById('windowBlack').classList.remove('windowBlack')
     }, 2000)
 })
+
+// end game line animation add
+
+function lineAnimationMid(){
+    document.getElementById('hrMid').classList.add('MidAnimationClass')
+    document.getElementById('hrMid').style.display = 'inline';
+}
+
+
+function lineAnimationMid2(){
+    document.getElementById('hrMid').classList.add('MidAnimationClass')
+    document.getElementById('hrMid').style.display = 'inline';
+    document.getElementById('hrMid').style.rotate = '90deg';
+}
+
+
+function lineAnimationObliqueLineLeftRight(){
+    document.getElementById('hrMid').classList.add('MidAnimationClass')
+    document.getElementById('hrMid').style.rotate = '135deg';
+    document.getElementById('hrMid').style.display = 'inline';
+}
+
+
+function lineAnimationObliqueLineRightLeft(){
+    document.getElementById('hrMid').classList.add('MidAnimationClass')
+    document.getElementById('hrMid').style.rotate = '45deg';
+    document.getElementById('hrMid').style.display = 'inline';
+}
+
+
+function topLineAcrossAnimation(){
+    document.getElementById('hrMid').classList.add('lineAcrossAnimationClass')
+    document.getElementById('hrMid').style.display = 'inline';
+    document.getElementById('hrMid').style.top = '-90px';
+}
+
+
+function lastLineAcrossAnimation(){
+    document.getElementById('hrMid').classList.add('lineAcrossAnimationClass')
+    document.getElementById('hrMid').style.display = 'inline';
+    document.getElementById('hrMid').style.top = '230px';
+}
+
+
+function upRightDownAnimation(){
+    document.getElementById('hrMid').classList.add('uprightAnimation')
+    document.getElementById('hrMid').style.display = 'inline';
+    document.getElementById('hrMid').style.left = '-90px';
+}
+
+
+function upRightDownAnimation2(){
+    document.getElementById('hrMid').classList.add('uprightAnimation')
+    document.getElementById('hrMid').style.display = 'inline';
+    document.getElementById('hrMid').style.left = '240px';
+}
