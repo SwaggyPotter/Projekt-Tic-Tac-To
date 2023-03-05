@@ -293,6 +293,7 @@ function upRightDownAnimation2() {
     }, 800)
 }
 
+
 function stopgame(){
     document.getElementById('field0').onclick = '';
     document.getElementById('field1').onclick = '';
@@ -304,4 +305,3 @@ function stopgame(){
     document.getElementById('field7').onclick = '';
     document.getElementById('field8').onclick = '';
 }
-

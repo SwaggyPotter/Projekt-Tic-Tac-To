@@ -86,7 +86,6 @@ table tr td:hover {
 
 #nameInput1 {
     margin-bottom: 50px;
-
 }
 
 .inputStyle {
@@ -138,7 +137,6 @@ table tr td:hover {
     align-items: center;
     min-height: 100px;
 }
-
 
 #gameOverScreen {
     position: absolute;
@@ -218,7 +216,6 @@ table tr td:hover {
 }
 
 /*next window animations*/
-
 
 @keyframes windowBlackEnd {
     0% {
