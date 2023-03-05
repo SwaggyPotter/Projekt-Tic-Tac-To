@@ -119,6 +119,7 @@ function endGameCircle() {
             document.getElementById('windowBlack').classList.remove('windowBlack')
         }, 2000)
     }, 2000)
+    stopgame()
 }
 
 
@@ -134,6 +135,7 @@ function endGameCross() {
             document.getElementById('windowBlack').classList.remove('windowBlack')
         }, 2000)
     }, 2000)
+    stopgame()
 }
 
 
@@ -219,9 +221,17 @@ function lineAnimationObliqueLineRightLeft() {
 
 
 function topLineAcrossAnimation() {
+    if (window.innerWidth > 500) {
+        document.getElementById('hrMid').style.top = '-90px';
+    }
+    else if (window.innerWidth < 500 && window.innerWidth > 400) {
+        document.getElementById('hrMid').style.top = '-70px';
+    }
+    else if (window.innerWidth < 400) {
+        document.getElementById('hrMid').style.top = '-60px';
+    }
     document.getElementById('hrMid').classList.add('lineAcrossAnimationClass')
     document.getElementById('hrMid').style.display = 'inline';
-    document.getElementById('hrMid').style.top = '-90px';
     setTimeout(() => {
         document.getElementById('hrMid').style.width = '400px'
     }, 800)
@@ -229,9 +239,18 @@ function topLineAcrossAnimation() {
 
 
 function lastLineAcrossAnimation() {
+    if (window.innerWidth > 500) {
+        document.getElementById('hrMid').style.top = '230px';
+    }
+    else if (window.innerWidth < 500 && window.innerWidth > 400) {
+        document.getElementById('hrMid').style.top = '170px';
+    }
+    else if (window.innerWidth < 400) {
+        document.getElementById('hrMid').style.top = '140px';
+    }
     document.getElementById('hrMid').classList.add('lineAcrossAnimationClass')
     document.getElementById('hrMid').style.display = 'inline';
-    document.getElementById('hrMid').style.top = '230px';
+
     setTimeout(() => {
         document.getElementById('hrMid').style.width = '400px'
     }, 800)
@@ -239,9 +258,17 @@ function lastLineAcrossAnimation() {
 
 
 function upRightDownAnimation() {
+    if (window.innerWidth > 500) {
+        document.getElementById('hrMid').style.left = '-90px';
+    }
+    else if (window.innerWidth < 500 && window.innerWidth > 400) {
+        document.getElementById('hrMid').style.left = '-65px';
+    }
+    else if (window.innerWidth < 400) {
+        document.getElementById('hrMid').style.left = '-55px';
+    }
     document.getElementById('hrMid').classList.add('uprightAnimation')
     document.getElementById('hrMid').style.display = 'inline';
-    document.getElementById('hrMid').style.left = '-90px';
     setTimeout(() => {
         document.getElementById('hrMid').style.height = '400px'
     }, 800)
@@ -249,10 +276,32 @@ function upRightDownAnimation() {
 
 
 function upRightDownAnimation2() {
+    if (window.innerWidth > 500) {
+        document.getElementById('hrMid').style.left = '240px';
+    }
+    else if (window.innerWidth < 500 && window.innerWidth > 400) {
+        document.getElementById('hrMid').style.left = '180px';
+    }
+    else if (window.innerWidth < 400) {
+        document.getElementById('hrMid').style.left = '150px';
+    }
     document.getElementById('hrMid').classList.add('uprightAnimation')
     document.getElementById('hrMid').style.display = 'inline';
-    document.getElementById('hrMid').style.left = '240px';
+
     setTimeout(() => {
         document.getElementById('hrMid').style.height = '400px'
     }, 800)
 }
+
+function stopgame(){
+    document.getElementById('field0').onclick = '';
+    document.getElementById('field1').onclick = '';
+    document.getElementById('field2').onclick = '';
+    document.getElementById('field3').onclick = '';
+    document.getElementById('field4').onclick = '';
+    document.getElementById('field5').onclick = '';
+    document.getElementById('field6').onclick = '';
+    document.getElementById('field7').onclick = '';
+    document.getElementById('field8').onclick = '';
+}
+
