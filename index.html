@@ -6,10 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="syle.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Tic Tac To</title>
 </head>
 
 <body>
+    <div id="muteContainer">
+        <span id="volumeOn" class="material-symbols-outlined">
+            volume_up
+        </span>
+        <span id="volumeOff" class="material-symbols-outlined">
+            volume_off
+        </span>
+    </div>
     <div id="startContainer">
         <div id="nameColum">
             <input class="inputStyle" id="nameInput1" type="text" placeholder="Player 1">
@@ -36,7 +46,9 @@
 
                 <tr>
                     <td onclick="add(3)" class="borderLeftNone picClass" id="field3"></td>
-                    <td onclick="add(4)" class="picClass" id="field4"><hr id="hrMid"></td>
+                    <td onclick="add(4)" class="picClass" id="field4">
+                        <hr id="hrMid">
+                    </td>
                     <td onclick="add(5)" class="borderRightNone picClass" id="field5"></td>
                 </tr>
 

@@ -19,6 +19,24 @@ table tr td:hover {
     cursor: pointer;
 }
 
+#muteContainer {
+    position: absolute;
+    top: 10px;
+    right: 70px;
+    color: white;
+    z-index: 10;
+}
+
+#volumeOn {
+    display: inline;
+    cursor: pointer;
+}
+
+#volumeOff {
+    display: none;
+    cursor: pointer;
+}
+
 #startContainer {
     position: absolute;
     width: 100%;
@@ -322,12 +340,12 @@ table tr td:hover {
         padding: 60px;
         background-color: rgba(153, 182, 245, 0.664);
     }
-    
+
     table tr td:hover {
         padding: 60px;
         background-color: rgba(12, 105, 167, 0.678);
         cursor: pointer;
-    } 
+    }
 }
 
 @media screen and (max-width:400px) {
@@ -335,10 +353,10 @@ table tr td:hover {
         padding: 50px;
         background-color: rgba(153, 182, 245, 0.664);
     }
-    
+
     table tr td:hover {
         padding: 50px;
         background-color: rgba(12, 105, 167, 0.678);
         cursor: pointer;
-    } 
+    }
 }

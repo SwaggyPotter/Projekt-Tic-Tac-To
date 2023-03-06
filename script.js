@@ -3,8 +3,29 @@ let game = [null, null, null, null, null, null, null, null, null]
 let startButton = document.getElementById('startButton')
 let nameInputOne = document.getElementById('nameInput1')
 let nameInputTwo = document.getElementById('nameInput2')
+let winner = '';
 let backgroundAudio = document.getElementById('audioSound')
+let volumeOn = document.getElementById('volumeOn')
+let volumeOff = document.getElementById('volumeOff')
 backgroundAudio.volume = 0.1
+let audio = new Audio('sounds/click.mp3');
+audio.volume = 0.1
+let undecideCounter = 9;
+let winnerCheck = false
+
+
+volumeOn.addEventListener('click', () => {
+    volumeOn.style.display = 'none';
+    volumeOff.style.display = 'flex';
+    backgroundAudio.volume = 0
+    audio.volume = 0
+})
+volumeOff.addEventListener('click', () => {
+    volumeOn.style.display = 'flex';
+    volumeOff.style.display = 'none';
+    backgroundAudio.volume = 0.1
+    audio.volume = 0.1
+})
 
 
 function add(c) {
@@ -13,10 +34,11 @@ function add(c) {
             document.getElementById(`field${c}`).style.backgroundImage = 'url("textures/circle.png")'
             game[c] = 0;
             currentPlayer++
+            winner = nameInputOne.value
             checkForWinCircle()
             showCurrentPlayer();
-            let audio = new Audio('sounds/click.mp3');
-            audio.volume = 0.1
+            undecideCounter--
+            undecided()
             audio.play();
         }
     }
@@ -25,10 +47,11 @@ function add(c) {
             document.getElementById(`field${c}`).style.backgroundImage = 'url("textures/cross.png")'
             game[c] = 1;
             currentPlayer--
+            winner = nameInputTwo.value;
             checkForWinCross();
             showCurrentPlayer()
-            let audio = new Audio('sounds/click.mp3');
-            audio.volume = 0.1
+            undecideCounter--
+            undecided()
             audio.play();
         }
     }
@@ -36,99 +59,86 @@ function add(c) {
 
 
 function checkForWinCircle() {
+
     if (game[0] == 0 && game[1] == 0 && game[2] == 0) {
-        endGameCircle();
+        endGame()
         topLineAcrossAnimation()
     }
     else if (game[0] == 0 && game[3] == 0 && game[6] == 0) {
-        endGameCircle();
+        endGame()
         upRightDownAnimation();
     }
     else if (game[1] == 0 && game[4] == 0 && game[7] == 0) {
-        endGameCircle();
+        endGame()
         lineAnimationMid();
     }
     else if (game[2] == 0 && game[5] == 0 && game[8] == 0) {
-        endGameCircle();
+        endGame()
         upRightDownAnimation2();
     }
     else if (game[3] == 0 && game[4] == 0 && game[5] == 0) {
-        endGameCircle();
+        endGame()
         lineAnimationMid2()
     }
     else if (game[6] == 0 && game[7] == 0 && game[8] == 0) {
-        endGameCircle();
+        endGame()
         lastLineAcrossAnimation()
     }
     else if (game[0] == 0 && game[4] == 0 && game[8] == 0) {
-        endGameCircle();
+        endGame()
         lineAnimationObliqueLineLeftRight()
     }
     else if (game[2] == 0 && game[4] == 0 && game[6] == 0) {
-        endGameCircle();
+        endGame()
         lineAnimationObliqueLineRightLeft()
     }
+
 }
 
 
 function checkForWinCross() {
     if (game[0] == 1 && game[1] == 1 && game[2] == 1) {
-        endGameCross();
+        endGame()
         topLineAcrossAnimation()
     }
     else if (game[3] == 1 && game[4] == 1 && game[5] == 1) {
-        endGameCross();
+        endGame()
         lineAnimationMid2()
     }
     else if (game[0] == 1 && game[3] == 1 && game[6] == 1) {
-        endGameCross();
+        endGame()
         upRightDownAnimation();
     }
     else if (game[1] == 1 && game[4] == 1 && game[7] == 1) {
-        endGameCross();
+        endGame()
         lineAnimationMid();
     }
     else if (game[2] == 1 && game[5] == 1 && game[8] == 1) {
-        endGameCross();
+        endGame()
         upRightDownAnimation2();
     }
     else if (game[6] == 1 && game[7] == 1 && game[8] == 1) {
-        endGameCross();
+        endGame()
         lastLineAcrossAnimation()
     }
     else if (game[0] == 1 && game[4] == 1 && game[8] == 1) {
-        endGameCross();
+        endGame()
         lineAnimationObliqueLineLeftRight()
     }
     else if (game[2] == 1 && game[4] == 1 && game[6] == 1) {
-        endGameCross();
+        endGame()
         lineAnimationObliqueLineRightLeft()
     }
 }
 
 
-function endGameCircle() {
+function endGame() {
+    winnerCheck = true;
     setTimeout(() => {
         document.getElementById('windowBlack').classList.add('windowBlack')
         setTimeout(() => {
             document.getElementById('gameOverScreen').style.display = 'flex';
-            document.getElementById('playerWinnerName').innerText = nameInputOne.value;
-            document.getElementById('audioSound').src = 'sounds/end-music.mp3';
-        }, 1000)
-        setTimeout(() => {
-            document.getElementById('windowBlack').classList.remove('windowBlack')
-        }, 2000)
-    }, 2000)
-    stopgame()
-}
-
-
-function endGameCross() {
-    setTimeout(() => {
-        document.getElementById('windowBlack').classList.add('windowBlack')
-        setTimeout(() => {
-            document.getElementById('gameOverScreen').style.display = 'flex';
-            document.getElementById('playerWinnerName').innerText = nameInputTwo.value;
+            document.getElementById('playerWinnerName').innerText = winner;
             document.getElementById('audioSound').src = 'sounds/end-music.mp3';
         }, 1000)
         setTimeout(() => {
@@ -152,8 +162,15 @@ function showCurrentPlayer() {
 }
 
 
+function stopgame() {
+    for (i = 0; i < game.length; i++) {
+        document.getElementById(`field${i}`).onclick = '';
+    }
+}
+
+
 function restart() {
-    var audio = new Audio('sounds/buttonSound.mp3');
+    let audio = new Audio('sounds/buttonSound.mp3');
     audio.volume = 0.1
     audio.play();
     document.getElementById('windowBlackEnd').classList.add('windowBlackEnd')
@@ -163,8 +180,16 @@ function restart() {
 }
 
 
+function undecided() {
+    if (undecideCounter == 0 && winnerCheck == false) {
+        winner = 'No one';
+        endGame();
+    }
+}
+
+
 startButton.addEventListener('click', () => {
-    var audio = new Audio('sounds/buttonSound.mp3');
+    let audio = new Audio('sounds/buttonSound.mp3');
     audio.volume = 0.1
     audio.play();
     document.getElementById('windowBlack').classList.add('windowBlack')
@@ -294,14 +319,3 @@ function upRightDownAnimation2() {
 }
 
 
-function stopgame(){
-    document.getElementById('field0').onclick = '';
-    document.getElementById('field1').onclick = '';
-    document.getElementById('field2').onclick = '';
-    document.getElementById('field3').onclick = '';
-    document.getElementById('field4').onclick = '';
-    document.getElementById('field5').onclick = '';
-    document.getElementById('field6').onclick = '';
-    document.getElementById('field7').onclick = '';
-    document.getElementById('field8').onclick = '';
-}
